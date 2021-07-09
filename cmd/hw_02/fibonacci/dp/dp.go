@@ -3,6 +3,8 @@ package dp
 import "fmt"
 
 func PrintSequence(n int) {
+	// Dynamic programming implementation O(N)
+
 	defer fmt.Println("Program completed")
 	numbers := []int64{0, 1}
 
