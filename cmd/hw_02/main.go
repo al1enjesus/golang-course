@@ -13,20 +13,22 @@ func main() {
 
 	if n < 1 || n > 93 {
 		fmt.Println("Incorrect value")
-	} else {
-		fmt.Println("Choose type of solution: 1-dynamic programming, 2-recursion")
-		var chose int
-		fmt.Scanf("%d\n", &chose)
+		return
+	}
 
-		switch chose {
-		case 1:
-			fmt.Println("Linear solution: ")
-			dp.PrintSequence(n)
-		case 2:
-			fmt.Println("Recursive solution: ")
-			recursive.PrintSequence(n)
-		default:
-			fmt.Println("Incorrect value")
-		}
+	fmt.Println("Choose type of solution: 1-dynamic programming, 2-recursion")
+	var chose int
+	fmt.Scanf("%d\n", &chose)
+
+	switch chose {
+	case 1:
+		fmt.Println("Linear solution: ")
+		dp.PrintSequence(n)
+	case 2:
+		fmt.Println("Recursive solution: ")
+		recursive.PrintSequence(n)
+	default:
+		fmt.Println("Incorrect value")
+
 	}
 }
