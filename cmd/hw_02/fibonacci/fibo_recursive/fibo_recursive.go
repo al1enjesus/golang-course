@@ -2,7 +2,7 @@ package fibo_recursive
 
 import "fmt"
 
-func fib(n int) int64{
+func fib(n int) int64 {
 	if n == 0 {
 		return 0
 	} else if n == 1 {
@@ -10,7 +10,6 @@ func fib(n int) int64{
 	}
 	return fib(n-1) + fib(n-2)
 }
-
 
 func PrintSequence(n int) {
 	// Recursive implementation O(N*(e^N))

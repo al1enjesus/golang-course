@@ -20,8 +20,10 @@ func main() {
 		fmt.Println("Incorrect value")
 		return
 	}
-	fmt.Println("Choose type of solution: 1-dynamic programming, 2-recursion, 3-the simplest")
+
+	fmt.Println("Choose type of solution: 1-dynamic programming, 2-recursion, 3-simplest solution")
 	var chose int
+
 	_, err = fmt.Scanf("%d\n", &chose)
 	if err != nil {
 		fmt.Println(err)
