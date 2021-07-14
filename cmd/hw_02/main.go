@@ -18,7 +18,13 @@ func main() {
 
 	fmt.Println("Choose type of solution: 1-dynamic programming, 2-recursion")
 	var chose int
-	fmt.Scanf("%d\n", &chose)
+
+	_, err := fmt.Scanf("%d\n", &chose)
+
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
 
 	switch chose {
 	case 1:
