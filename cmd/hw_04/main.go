@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	"golang-course/cmd/hw_04/shape"
+	"golang-course/cmd/hw_04/shape/circle"
+	"golang-course/cmd/hw_04/shape/rectangle"
 )
 
 func DescribeShape(s shape.Shape) {
@@ -12,8 +14,8 @@ func DescribeShape(s shape.Shape) {
 }
 
 func main() {
-	c := shape.NewCircle(8)
-	r := shape.NewRectangle(9, 3)
+	c := circle.New(8)
+	r := rectangle.New(9, 3)
 	DescribeShape(c)
 	DescribeShape(r)
 }
