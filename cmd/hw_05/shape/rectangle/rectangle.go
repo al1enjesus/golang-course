@@ -11,20 +11,20 @@ type Rectangle struct {
 }
 
 func (x Rectangle) Area() (float64, error) {
-	if x.width <= 0 {
+	if x.width < 0 {
 		return 0, errors.New("Negative width\n")
 	}
-	if x.height <= 0 {
+	if x.height < 0 {
 		return 0, errors.New("Negative height\n")
 	}
 	return x.width * x.height, nil
 }
 
 func (x Rectangle) Perimeter() (float64, error) {
-	if x.width <= 0 {
+	if x.width < 0 {
 		return 0, errors.New("Negative width\n")
 	}
-	if x.height <= 0 {
+	if x.height < 0 {
 		return 0, errors.New("Negative height\n")
 	}
 	return (x.width + x.height) * 2, nil
