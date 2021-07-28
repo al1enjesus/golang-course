@@ -1,3 +1,3 @@
-module golang-course/cmd/hw_04/shape
+module golang-course/cmd/hw_05/shape
 
 go 1.16

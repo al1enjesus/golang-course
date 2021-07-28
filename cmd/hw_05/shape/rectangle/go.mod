@@ -1,3 +1,3 @@
-module golang-course/cmd/hw_04/shape/rectangle
+module golang-course/cmd/hw_05/shape/rectangle
 
 go 1.16
