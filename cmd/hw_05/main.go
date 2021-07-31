@@ -12,20 +12,28 @@ func DescribeShape(s shape.Shape) {
 
 	resArea, errArea := s.Area()
 	if errArea != nil {
-		panic(fmt.Sprintf("Error: %v", errArea.Error()))
+		fmt.Sprintf("Error: %v", errArea.Error())
 	}
 	fmt.Printf("Area: %.2f\n", resArea)
 
 	resPerimeter, errPerimeter := s.Perimeter()
 	if errPerimeter != nil {
-		panic(fmt.Sprintf("Error: %v", errPerimeter.Error()))
+		fmt.Sprintf("Error: %v", errPerimeter.Error())
 	}
 	fmt.Printf("Perimeter: %.2f\n", resPerimeter)
 }
 
 func main() {
-	c := circle.New(8)
-	r := rectangle.New(9, 3)
+	c, errC := circle.New(3)
+	if errC != nil {
+		panic(fmt.Sprintf("Error: %v", errC.Error()))
+	}
+
+	r, errR := rectangle.New(9, 3)
+	if errR != nil {
+		panic(fmt.Sprintf("Error: %v", errR.Error()))
+	}
+
 	DescribeShape(c)
 	DescribeShape(r)
 }

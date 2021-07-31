@@ -34,6 +34,9 @@ func (x Rectangle) String() string {
 	return fmt.Sprintf("Rectangle with height %.2f and width %.2f", x.height, x.width)
 }
 
-func New(width float64, height float64) Rectangle {
-	return Rectangle{width: width, height: height}
+func New(width float64, height float64) (Rectangle, error) {
+	if width < 0 || height < 0 {
+		return Rectangle{width: 0, height: 0}, errors.New("Incorrect width or height")
+	}
+	return Rectangle{width: width, height: height}, nil
 }

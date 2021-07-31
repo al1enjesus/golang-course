@@ -28,6 +28,9 @@ func (x Circle) String() string {
 	return fmt.Sprintf("Circle: radius %.2f", x.radius)
 }
 
-func New(radius float64) Circle {
-	return Circle{radius: radius}
+func New(radius float64) (Circle, error) {
+	if radius < 0 {
+		return Circle{radius: 0}, errors.New("Incorrect radius")
+	}
+	return Circle{radius: radius}, nil
 }
