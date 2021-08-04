@@ -1,10 +1,11 @@
 package main
 
-
-import "net"
-import "fmt"
-import "bufio"
-import "os"
+import (
+	"bufio"
+	"fmt"
+	"net"
+	"os"
+)
 
 func main() {
 	conn, _ := net.Dial("tcp", "127.0.0.1:8081")
