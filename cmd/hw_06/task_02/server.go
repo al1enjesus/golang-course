@@ -13,10 +13,19 @@ func main() {
 
 	fmt.Println("Launching server...")
 	ln, _ := net.Listen("tcp", ":8081")
-	conn, _ := ln.Accept()
-
 	for {
-		message, _ := bufio.NewReader(conn).ReadString('\n')
+		fmt.Println("Waiting client")
+		conn, err := ln.Accept()
+		if err != nil {
+			fmt.Println(err)
+			break
+		}
+
+		message, err := bufio.NewReader(conn).ReadString('\n')
+		if err != nil {
+			fmt.Println(err)
+			break
+		}
 		length := utf8.RuneCountInString(string(message))
 		message = message[:(length-2)]
 		fmt.Println("Message Received:", message)
