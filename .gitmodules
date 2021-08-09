@@ -1,0 +1,3 @@
+[submodule "cmd/hw_07/course-rest"]
+	path = cmd/hw_07/course-rest
+	url = https://github.com/al1enjesus/course-rest
