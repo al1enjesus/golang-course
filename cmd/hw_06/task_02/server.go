@@ -21,23 +21,25 @@ func main() {
 			break
 		}
 
-		message, err := bufio.NewReader(conn).ReadString('\n')
-		if err != nil {
-			fmt.Println(err)
-			break
-		}
-		length := utf8.RuneCountInString(string(message))
-		message = message[:(length-2)]
-		fmt.Println("Message Received:", message)
+		for {
+			message, err := bufio.NewReader(conn).ReadString('\n')
+			if err != nil {
+				fmt.Println(err)
+				break
+			}
+			length := utf8.RuneCountInString(string(message))
+			message = message[:(length - 2)]
+			fmt.Println("Message Received:", message)
 
-		var newMessage string
-		value, err := strconv.ParseInt(message, 0, 64)
-		if err != nil {
-			newMessage = strings.ToUpper(message)
-		} else {
-			newMessage = strconv.Itoa(int(value * 2))
-		}
+			var newMessage string
+			value, err := strconv.ParseInt(message, 0, 64)
+			if err != nil {
+				newMessage = strings.ToUpper(message)
+			} else {
+				newMessage = strconv.Itoa(int(value * 2))
+			}
 
-		conn.Write([]byte(newMessage + "\n"))
+			conn.Write([]byte(newMessage + "\n"))
+		}
 	}
 }

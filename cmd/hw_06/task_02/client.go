@@ -12,7 +12,11 @@ func main() {
 	for {
 		reader := bufio.NewReader(os.Stdin)
 		fmt.Print("Text to send: ")
-		text, _ := reader.ReadString('\n')
+		text, err := reader.ReadString('\n')
+		if err != nil {
+			fmt.Println(err)
+			break
+		}
 
 		fmt.Fprintf(conn, text + "\n")
 		message, _ := bufio.NewReader(conn).ReadString('\n')
